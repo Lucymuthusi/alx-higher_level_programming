@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+
 import sys
-num_args = len(sys.argv)
-print(f"Number of argument{('s' if num_args > 1 else '')}: {num_args}")
-print(":" if num_args > 0 else ".")
-for i in range(1, num_args):
-   print(f"{i+1}: {sys.argv[i]}")
+
+if __name__ == "__main__":
+   num_arguments = len(sys.argv) - 1  # Exclude the script name
+   print(f"Number of {'argument' if num_arguments == 1 else 'arguments'}: {num_arguments}.")
+
+   if num_arguments > 0:
+       for i in range(1, num_arguments + 1):
+           print(f"{i}: {sys.argv[i]}")
