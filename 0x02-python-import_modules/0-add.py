@@ -1,6 +1,16 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from add_0 import add
-      a = 1
-    b = 2
-    print("{} + {} = {}".format(a, b, add(a, b)))
+
+def print_sum(a, b):
+  """Prints the sum of a and b in a formatted string."""
+  print(f"{a} + {b} = {add(a, b)}")
+
+try:
+  from add_0 import add
+except ModuleNotFoundError:
+  print("Error: Could not import function 'add' from add_0.py")
+  exit(1)
+
+a = 1
+b = 2
+
+print_sum(a, b)
